@@ -1,0 +1,12 @@
+# Ignore local editor and environment files
+.venv/
+.vscode/
+extensions/
+__pycache__/
+*.pyc
+*.pyo
+*.ipynb
+
+# Local VS Code settings
+argv.json
+settings.json
