@@ -1,58 +1,92 @@
-# Tkinter App
+# Password Strength Checker
 
-A simple desktop GUI built with Python's `tkinter` library.
+This project is a simple Python-based password strength checker. It evaluates a password entered by the user and labels it as `Weak`, `Moderate`, or `Strong` based on common security rules.
 
-The app opens a small window with:
+## Project Objectives
 
-- An input box for typing text
-- A button to submit the text
-- A result area that displays the submitted value on screen
+The goal of this project is to help users:
 
-## File
+- Check whether a password is weak, moderate, or strong
+- Understand why a password may be insecure
+- Receive suggestions for improving password security
 
-- `tkinter_app.py` - the main GUI application
+## Features
+
+- Command-line interface for entering passwords
+- Strength evaluation based on:
+  - Password length
+  - Use of uppercase and lowercase letters
+  - Use of numbers
+  - Use of special characters
+  - Detection of common weak passwords
+- Helpful feedback and improvement suggestions
+- Graceful exit using `Enter`, `Ctrl+C`, or `Ctrl+D`
+
+## File Included
+
+- `password_checker.py` - main password strength checker script
+
+## Prerequisites
+
+- Python 3.10 or later recommended
+
+## Dependencies
+
+This project uses only Python standard library modules:
+
+- `re`
+
+No third-party packages need to be installed.
+
+## How to Set Up
+
+1. Make sure Python is installed on your computer.
+2. Open a terminal in the project folder.
+3. Verify Python is available:
+
+```bash
+python --version
+```
+
+## How to Run
+
+Run the script from the terminal:
+
+```bash
+python password_checker.py
+```
+
+If your system uses `py` on Windows, you can also run:
+
+```powershell
+py password_checker.py
+```
 
 ## How It Works
 
-When you type text into the input field and click `Show Result`, the window updates the label below the button.
+After running the program:
 
-- If text is entered, the app shows: `You entered: <your text>`
-- If the input is empty, the app shows: `Please enter some text.`
-
-## Run The App
-
-Use your local Python interpreter to start the program:
-
-```bash
-python tkinter_app.py
-```
-
-If `python` is not on your PATH in Windows, use the interpreter you normally run from VS Code, for example:
-
-```powershell
-C:/path/to/python.exe tkinter_app.py
-```
-
-## Requirements
-
-- Python 3.x
-- `tkinter` available in your Python installation
+1. Enter a password when prompted.
+2. The program checks the password against several strength rules.
+3. It displays:
+   - A strength rating
+   - Suggestions to make the password stronger
+4. Press `Enter` on an empty prompt to exit the program.
 
 ## Example
 
-1. Launch the app
-2. Type `Hello`
-3. Click `Show Result`
-4. The window displays `You entered: Hello`
+```text
+Password Strength Checker
+Enter a password to evaluate. Press Enter to quit.
+Password: Hello123
 
-## Other Files In This Workspace
+Password strength: Moderate
+Suggestions:
+- Longer passwords (12+ characters) are stronger.
+- Add symbols like !, @, #, $, %, or &.
+```
 
-This workspace also contains a few separate Python utilities such as:
+## Notes
 
-- `vulnerability_scanner.py`
-- `port_scanner.py`
-- `password_checker.py`
-- `socket_client.py`
-- `socket_server.py`
-
-Those scripts are independent from the Tkinter app.
+- Common passwords such as `password` and `123456` are automatically rated poorly.
+- Stronger passwords are usually longer and include a mix of letters, numbers, and symbols.
